@@ -1,0 +1,8 @@
+lolrbmet:
+a fail metronome.
+
+time signature syntax:
+t bpm
+num den (rep)
+
+see var/timesig.
