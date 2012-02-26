@@ -1,0 +1,6 @@
+#!/usr/bin/ruby
+
+require 'lolrbmet/lolrbmet'
+
+wat = LolRbMet.new ARGV[0]
+wat.start

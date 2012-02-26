@@ -1,6 +1,9 @@
-require 'lolrbmet_alut'
+require 'lolrbmet/alut_ext'
 
 class LolRbMet
+	TickFile = "#{File.dirname(__FILE__)}/../../data/tick.wav"
+	TockFile = "#{File.dirname(__FILE__)}/../../data/tick.wav"
+
 	def initialize sheet
 		@sheet = sheet
 		@tempo = 140
