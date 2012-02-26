@@ -16,10 +16,9 @@ Init_alut_ext() {
 	lolrbmet_class = rb_define_class("LolRbMet", rb_cObject);
 
 	rb_define_method(lolrbmet_class, "init_player", method_init_player, 0);
-	rb_define_method(lolrbmet_class, "play_tick", method_play_tick, 0);
-	rb_define_method(lolrbmet_class, "play_tock", method_play_tock, 0);
+	rb_define_method(lolrbmet_class, "_play_tick", method_play_tick, 0);
+	rb_define_method(lolrbmet_class, "_play_tock", method_play_tock, 0);
 }
-
 
 VALUE 
 method_init_player(VALUE self) {

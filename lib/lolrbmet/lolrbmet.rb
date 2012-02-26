@@ -2,7 +2,7 @@ require 'lolrbmet/alut_ext'
 
 class LolRbMet
 	TickFile = "#{File.dirname(__FILE__)}/../../data/tick.wav"
-	TockFile = "#{File.dirname(__FILE__)}/../../data/tick.wav"
+	TockFile = "#{File.dirname(__FILE__)}/../../data/tock.wav"
 
 	def initialize sheet
 		@sheet = sheet
@@ -29,9 +29,21 @@ class LolRbMet
 		@usleep_t = (60 * 1000000) / (@tempo / 4) / den.to_i
 
 		rep.to_i.times {
-			(num.to_i - 1).times { play_tick } 
-			play_tock
+			print "[#{@tempo} bpm] #{num}/#{den} |"
+			$stdout.flush
+
+			_play 'tick' 
+			(num.to_i - 1).times { _play 'tock' } 
+
+			print "#{27.chr}[2K\r"
 		}
+	end
+
+	def _play wat
+		print " #"
+		$stdout.flush
+
+		send '_play_' + wat
 	end
 end
 

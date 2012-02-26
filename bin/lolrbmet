@@ -2,5 +2,6 @@
 
 require 'lolrbmet/lolrbmet'
 
+puts "LOLRBMET"
 wat = LolRbMet.new ARGV[0]
 wat.start
